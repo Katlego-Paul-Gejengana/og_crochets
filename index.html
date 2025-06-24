@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OG Crochets</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>OG Crochets</h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About Us</a>
+      <a href="#work">Our Work</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section id="home" class="home-section">
+    <div class="video-slideshow-container">
+        <video class="video-slide" src="video1.mp4" muted></video>
+        <video class="video-slide" src="video2.mp4" muted></video>
+        <video class="video-slide" src="video3.mp4" muted></video>
+    </div>
+    <div class="home-text">
+      <h2>Welcome to OG Crochets</h2>
+      <p>Handmade crochet fashion for every soul. where uniqueness meets elegance and cozy comfort.</p>
+      <p>Based in South Africa — clothing, accessories, and more!</p>
+    </div>
+  </section>
+
+  <section id="about" class="about-section">
+    <h2>About Us</h2>
+    <p>OG Crochets is a proudly South African startup dedicated to bringing the timeless art of crochet into the modern fashion landscape. Our passion lies in creating unique, handcrafted pieces that blend traditional techniques with contemporary style. From cozy tops and elegant dresses to stylish bags and hats, every item we make is infused with love, creativity, and meticulous attention to detail.</p>
+    <p>We believe that fashion should be personal, sustainable, and meaningful, which is why we focus on slow fashion — crafting each piece by hand to ensure quality and individuality. Our work celebrates the beauty of handmade craftsmanship in a world dominated by mass production, offering customers clothing and accessories that stand out and tell a story.</p>
+    <p>At OG Crochets, we’re more than just a brand; we’re a community of makers and lovers of crochet. We’re committed to supporting local artisans, empowering creativity, and fostering a deeper appreciation for this intricate art form. Every stitch reflects our dedication to preserving cultural heritage while pushing the boundaries of fashion innovation.</p>
+    <p>Whether you’re looking for a statement piece, a cozy everyday item, or a custom order tailored to your style, OG Crochets offers creations designed to inspire confidence and express individuality. Join us on this vibrant journey as we weave together tradition, artistry, and modern fashion — one stitch at a time.</p>
+</section>
+
+  <section id="work" class="work-section">
+    <h2>Our Work</h2>
+    <p>This is a curated collection of our handcrafted crochet creations — each piece made with care, creativity, and attention to detail. From stylish clothing and accessories to unique custom orders, our work showcases the passion we have for the art of crochet. We take pride in every stitch, and we’re excited to share these special pieces with you.</p>
+    <div class="image-slideshow-container">
+      <img class="image-slide" src="work-section-pics/work-section_pic1.jpg" alt="work-section_pic1">
+      <img class="image-slide" src="work-section-pics/work-section_pic2.jpg" alt="work-section_pic2">
+      <img class="image-slide" src="work-section-pics/work-section_pic3.jpg" alt="work-section_pic3">
+      <img class="image-slide" src="work-section-pics/work-section_pic4.jpg" alt="work-section_pic4">
+      <img class="image-slide" src="work-section-pics/work-section_pic5.jpg" alt="work-section_pic5">
+      <img class="image-slide" src="work-section-pics/work-section_pic6.jpg" alt="work-section_pic6">
+      <img class="image-slide" src="work-section-pics/work-section_pic7.jpg" alt="work-section_pic7">
+    </div>
+    <p>Unique. Elegant. Cozy.</p>
+  </section>
+
+  <section id="contact" class="contact-section">
+    <h2>Contact Us</h2>
+    <p>You can contact us through the channels and social media platforms listed below.</p>
+    <p>We’d love to hear from you!</p>
+
+    <p>Email: enquiries@gmail.com</p>
+    <p>Phone: +27 73 957 0102</p>
+    <div class="social-media">
+      <a href="https://instagram.com/og_crochets" target="_blank">Instagram</a>
+      <a href="https://facebook.com/ogcrochets" target="_blank">Facebook</a>
+      <a href="https://tiktok.com/@ogcrochets" target="_blank">TikTok</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Wiseman Creatives. All rights reserved.</p>
+  </footer>
+
+  <script>
+  // Image slideshow auto-advance
+  let imgIndex = 0;
+  const imageSlides = document.querySelectorAll('.image-slide');
+  function showNextImage() {
+    imageSlides.forEach(slide => slide.style.display = 'none');
+    imgIndex = (imgIndex + 1) % imageSlides.length;
+    imageSlides[imgIndex].style.display = 'block';
+  }
+  showNextImage(); // show first image
+  setInterval(showNextImage, 3000); // every 3 seconds
+
+  // Video slideshow auto-advance
+  let vidIndex = 0;
+  const videoSlides = document.querySelectorAll('.video-slide');
+  function showNextVideo() {
+    videoSlides.forEach(v => {
+      v.pause();
+      v.style.display = 'none';
+    });
+    vidIndex = (vidIndex + 1) % videoSlides.length;
+    const current = videoSlides[vidIndex];
+    current.style.display = 'block';
+    current.currentTime = 0;
+    current.play();
+  }
+  showNextVideo(); // show first video
+  setInterval(showNextVideo, 3000); // every 3 seconds
+</script>
+
+</body>
+</html>
